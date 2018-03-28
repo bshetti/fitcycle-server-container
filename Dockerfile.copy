@@ -1,0 +1,25 @@
+FROM alpine:latest
+MAINTAINER Bill Shetti "billshetti@gmail.com"
+WORKDIR /fitcycle
+COPY ./fitcycle /fitcycle
+ 
+ENV MYSQL_ID="db_app_user" 
+ENV MYSQL_PASSWORD="VMware123!" 
+ENV MYSQL_SERVER="fitcyclecustomers.cy4b7ufzt54x.us-west-2.rds.amazonaws.com"
+
+RUN apk update && \
+    apk add python-dev && \
+    apk add mysql mysql-client && \
+    apk add py-pip && \
+    apk add py-sqlalchemy && \
+    apk add py-django && \
+    apk add py-mysqldb && \
+    apk add py-requests
+
+
+
+COPY ./settings.py /fitcycle/fitcycle/settings.py
+ 
+EXPOSE 8000
+
+
