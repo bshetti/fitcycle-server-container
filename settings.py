@@ -146,3 +146,8 @@ LOGGING = {
     },
 }
 
+STATSD_HOST = 'localhost'
+STATSD_PORT = 8125
+STATSD_PREFIX = "fitcycle-server"
+STATSD_MAXUDPSIZE = 512
+
