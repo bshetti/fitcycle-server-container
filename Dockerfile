@@ -33,4 +33,5 @@ RUN ["python", "manage.py", "migrate"]
 
 RUN ["chmod", "777", "./startfitcycle.sh"]
 
-CMD ["./startfitcycle.sh"]
+#CMD ["./startfitcycle.sh"]
+CMD ["python", "/fitcycle/manage.py", "runserver", "0.0.0.0:8000"]
